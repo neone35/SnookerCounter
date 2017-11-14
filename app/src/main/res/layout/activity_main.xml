@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.snookercounter.MainActivity">
+
+    <!-- First player layout -->
+
+    <TextView
+        android:id="@+id/first_player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginStart="71dp"
+        android:text="Player 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+
+    <Button
+        android:id="@+id/button_red_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:onClick="addScore"
+        android:text="+1"
+        android:theme="@style/AppTheme.ButtonRed"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_yellow_first"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_yellow_first"
+        tools:layout_constraintBaseline_creator="1" />
+
+    <Button
+        android:id="@+id/button_yellow_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:onClick="addScore"
+        android:text="+2"
+        android:theme="@style/AppTheme.ButtonYellow"
+        app:layout_constraintBottom_toBottomOf="@+id/button_yellow_second"
+        app:layout_constraintLeft_toRightOf="@+id/button_red_first"
+        app:layout_constraintRight_toLeftOf="@+id/view" />
+
+    <Button
+        android:id="@+id/button_green_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonGreen"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_bronze_first"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_bronze_first"
+        tools:layout_constraintBaseline_creator="1" />
+
+    <Button
+        android:id="@+id/button_black_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+7"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBlack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_reset_first"
+        app:layout_constraintTop_toBottomOf="@+id/button_blue_first"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_blue_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+5"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBlue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_pink_first"
+        app:layout_constraintTop_toBottomOf="@+id/button_green_first"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_pink_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+6"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonPink"
+        app:layout_constraintBottom_toBottomOf="@+id/button_blue_first"
+        app:layout_constraintLeft_toRightOf="@+id/button_blue_first"
+        app:layout_constraintRight_toLeftOf="@+id/view" />
+
+    <Button
+        android:id="@+id/button_bronze_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+4"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBronze"
+        app:layout_constraintBottom_toBottomOf="@+id/button_bronze_second"
+        app:layout_constraintLeft_toRightOf="@+id/button_green_first"
+        app:layout_constraintRight_toLeftOf="@+id/view" />
+
+    <Button
+        android:id="@+id/button_reset_first"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        android:onClick="resetBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/button_black_first"
+        app:layout_constraintLeft_toRightOf="@+id/button_black_first"
+        app:layout_constraintRight_toLeftOf="@+id/view" />
+
+    <Button
+        android:id="@+id/button_reset_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="resetAll"
+        android:text="Reset all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <!-- Middle separating line -->
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="440dp"
+        android:background="@color/primaryColor"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <!-- Second player layout -->
+
+    <TextView
+        android:id="@+id/first_player_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginRight="87dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_red_first"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_name"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginStart="71dp"
+        android:text="Player 2"
+        app:layout_constraintBottom_toBottomOf="@+id/first_player_name"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/second_player_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginRight="86dp"
+        android:layout_marginStart="86dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/first_player_score"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/button_reset_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        android:onClick="resetBtn"
+        app:layout_constraintLeft_toRightOf="@+id/button_black_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_pink_second"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_black_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+7"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBlack"
+        app:layout_constraintBottom_toBottomOf="@+id/button_reset_second"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toLeftOf="@+id/button_reset_second" />
+
+    <Button
+        android:id="@+id/button_pink_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+6"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonPink"
+        app:layout_constraintLeft_toRightOf="@+id/button_blue_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_bronze_second"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_blue_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+5"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/button_blue_first"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toLeftOf="@+id/button_pink_second" />
+
+    <Button
+        android:id="@+id/button_bronze_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+4"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonBronze"
+        app:layout_constraintLeft_toRightOf="@+id/button_green_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_yellow_second"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_green_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        android:onClick="addScore"
+        android:theme="@style/AppTheme.ButtonGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/button_bronze_second"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toLeftOf="@+id/button_bronze_second" />
+
+    <Button
+        android:id="@+id/button_yellow_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:onClick="addScore"
+        android:text="+2"
+        android:theme="@style/AppTheme.ButtonYellow"
+        app:layout_constraintLeft_toRightOf="@+id/button_red_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_player_score"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button_red_second"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:onClick="addScore"
+        android:text="+1"
+        android:theme="@style/AppTheme.ButtonRed"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toLeftOf="@+id/button_yellow_second"
+        app:layout_constraintTop_toTopOf="@+id/button_yellow_second" />
+
+    <TextView
+        android:id="@+id/second_player_wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Wins"
+        app:layout_constraintLeft_toLeftOf="@+id/button_blue_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_black_second" />
+
+    <TextView
+        android:id="@+id/first_player_wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Wins"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/button_black_first" />
+
+    <TextView
+        android:id="@+id/first_player_wins_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/button_pink_first"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_wins" />
+
+    <TextView
+        android:id="@+id/second_player_wins_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="@+id/button_blue_second"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_player_wins" />
+
+    <Button
+        android:id="@+id/second_player_wins_plus"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="modWins"
+        android:text="+"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/second_player_wins_score"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_player_wins" />
+
+    <Button
+        android:id="@+id/first_player_wins_plus"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="modWins"
+        android:text="+"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/first_player_wins_score"
+        app:layout_constraintRight_toRightOf="@+id/button_pink_first"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_wins" />
+
+    <Button
+        android:id="@+id/second_player_wins_minus"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="modWins"
+        android:text="-"
+        app:layout_constraintLeft_toLeftOf="@+id/button_blue_second"
+        app:layout_constraintRight_toLeftOf="@+id/second_player_wins_score"
+        app:layout_constraintTop_toBottomOf="@+id/second_player_wins" />
+
+    <Button
+        android:id="@+id/first_player_wins_minus"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="modWins"
+        android:text="-"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/first_player_wins_score"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_wins" />
+
+
+</android.support.constraint.ConstraintLayout>
+
+
